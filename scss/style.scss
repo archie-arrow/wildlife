@@ -1,0 +1,400 @@
+@import "../../node_modules/normalize.css/normalize";
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+$orange-main: #CD6326;
+$orange-light: #E39128;
+$orange-dark: #8F5613;
+$font-dark: #333333;
+$font-gray: #666666;
+$font-light: #f7f7f7;
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.first-screen {
+    background-image: url(../images/first-screen-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 240px;
+    padding-top: 19px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    
+
+    &__text {
+        font-size: 32px;
+        line-height: 60px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        color: $font-light;
+        text-transform: uppercase;
+        margin-left: 15px;
+    }
+}
+
+.nav {
+
+    font-size: 23px;
+    line-height: 60px;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item+&__item {
+        margin-left: 60px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $font-light;
+        font-size: 23px;
+        line-height: 60px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__btn {
+        border: 2px solid $orange-main;
+        border-radius: 5px;
+        padding: 2px 23px;
+        line-height: 27px;
+
+        &:hover {
+            background-color: $orange-main;
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: $orange-dark;
+            border-color: $orange-dark;
+        }
+    }
+
+}
+
+.survival {
+
+    &__title {
+        font-size: 48px;
+        line-height: 72px;
+        letter-spacing: 2px;
+        color: $orange-main;
+        margin-bottom: 51px;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 27px;
+        color: $font-light;
+        margin-bottom: 49px;
+        max-width: 275px;
+    }
+
+    &__btn {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 27px;
+        color: $font-light;
+        background: $orange-main;
+        border: $orange-main;
+        border-radius: 5px;
+        padding: 16px 42px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $orange-light;
+            border-color: $orange-light;
+        }
+
+        &:active {
+            background-color: $orange-dark;
+            border-color: $orange-dark;
+        }
+    }
+
+}
+
+.articles {
+
+    background-color: #cccccc;
+    padding: 120px 0 240px 0;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 120px;
+    }
+
+    &__title {
+        font-size: 48px;
+        line-height: 72px;
+        color: $font-dark;
+        margin-bottom: 20px;
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        line-height: 36px;
+        color: $font-gray;
+    }
+
+    &__slider {
+        max-width: 1020px;
+        margin: 0 auto;
+    }
+
+    &__slider-item {
+        position: relative;
+    }
+
+    &__slider-descr {
+        text-align: center;
+        color: $font-light;
+        position: absolute;
+        bottom: 40px;
+        right: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    &__slidet-title {
+        font-size: 22px;
+        line-height: 36px;
+        margin-bottom: 10px;
+    }
+
+    &__slidet-subtitle {
+        font-size: 17px;
+        line-height: 27px;
+    }
+
+    &__slider-img {
+        margin: 0 auto;
+    }
+
+
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 48%;
+    cursor: pointer;
+
+    border: solid $font-gray;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+
+    &:hover {
+        border: solid $font-light;
+        border-width: 0 10px 10px 0;
+    }
+}
+
+.slick-list {
+    margin: 0 -20px;
+}
+.slick-slide {
+    margin: 0 20px;
+}
+
+.prev {
+    transform: rotate(135deg);
+    left: -80px;  
+}
+.next {
+    transform: rotate(-45deg);
+    right: -80px;
+}
+
+.notified {
+
+    background-color: #cccccc;
+    padding-bottom: 240px;
+
+    &__title {
+        font-size: 27px;
+        line-height: 40px;
+        text-align: center;
+        color: $font-dark;
+        margin-bottom: 59px;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__form-text {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        max-width: 540px;
+        width: 100%;
+        border: 1px solid $font-dark;
+        border-right: none;
+        background-color: transparent;
+        padding: 12px 15px;
+    }
+
+    &__form-button {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        padding: 12px 34px;
+        color: $font-light;
+        background: $orange-main;
+        border: 1px solid $orange-main;
+        border-radius: 0px 5px 5px 0px;     
+        cursor: pointer;
+
+        &:hover {
+            background-color: $orange-light;
+            border-color: $orange-light;
+        }
+
+        &:active {
+            background-color: $orange-dark;
+            border-color: $orange-dark;
+        }
+    }
+
+}
+
+.footer {
+    background-image: url(../images/footer-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 150px 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between
+    }
+
+    &__menu-item+&__menu-item {
+        margin-left: 85px;
+    }
+
+    &__menu-link {
+        font-size: 23px;
+        line-height: 60px;
+        text-decoration: none;
+        color: $font-light;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-between
+    }
+    
+    &__social-item+&__social-item {
+        margin-left: 26px;
+    }
+}
+
+@import "media";
